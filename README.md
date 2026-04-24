@@ -17,7 +17,7 @@ A full-stack data analysis project examining participant demographics and behavi
 ## 🗂️ Project Structure
 
 ```
-youth-analytics/
+ParusyaDA/
 ├── data_public/
 │   └── cleaned_data.csv
 ├── extract_transform.py
