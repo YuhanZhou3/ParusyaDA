@@ -25,8 +25,8 @@ ParusyaDA/
 └── README.md
 ```
 
-ETL: extract_transform.py
-EDA & Dashboarding: analysis.ipynb
+- **ETL**: extract_transform.py
+- **EDA** & **Dashboarding**: analysis.ipynb
 
 ---
 
