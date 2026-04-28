@@ -66,8 +66,10 @@ for col in ["event_time", "checkin_time", "participant_birth"]:
 df['checkin_time'] = df['checkin_time'].dt.tz_localize('UTC').dt.tz_convert('Brazil/East')
 # Add age column
 df["participant_age"] = (pd.to_datetime("today") - df["participant_birth"]).dt.days // 365
-# De-identify participants by only keeping first names
-df["participant_name"] = df["participant_name"].str.split().str[0]
+# De-identify participants by only keeping initials of first and last names & delete birthdate column
+names = df["participant_name"].str.split()
+df["participant_name"] = names.str[0].str[0] + names.str[-1].str[0]
+df = df.drop(columns=["participant_birth"])
 
 # # abnormal age value check
 # abnormal_age_ids = df[df["participant_age"] <= 7]["participant_id"].drop_duplicates().tolist()
